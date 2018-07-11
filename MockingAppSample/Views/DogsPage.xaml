@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MockingAppSample.Views.DogsPage"
+             Title="Dogs">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Dogs}"
+                  HasUnevenRows="true"
+                  RowHeight="140"
+                  Footer="">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="20"
+                          VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                          </Grid.RowDefinitions>
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                          </Grid.ColumnDefinitions>
+
+                         <Image Source="{Binding Photo}"
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.RowSpan="3"/>
+
+                         <Label Text="{Binding Name}"
+                                FontAttributes="Bold"
+                                Grid.Row="0"
+                                Grid.Column="1"/>
+
+                        <Label Text="{Binding Age}"
+                                Grid.Row="1"
+                                Grid.Column="1"/>
+
+                         <Label Text="{Binding Race}"
+                                Grid.Row="2"
+                                Grid.Column="1"/>
+                     </Grid>
+                 </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+    </ContentPage.Content>
+</ContentPage>

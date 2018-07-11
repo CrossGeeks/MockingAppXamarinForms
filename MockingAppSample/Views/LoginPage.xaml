@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MockingAppSample.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20,80">
+            <Label Text="User"
+                   FontAttributes="Bold"/>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                   HeightRequest="40"
+                   Text="{Binding User.UserName}"/>
+
+            <Label Text="Password"
+                   FontAttributes="Bold"/>
+
+            <Entry HorizontalOptions="FillAndExpand"
+                   HeightRequest="40"
+                   Text="{Binding User.Password}"/>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               HorizontalOptions="Center"/>
+            <Button Text="Login"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    Command="{Binding LoginCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
